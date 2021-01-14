@@ -12,7 +12,7 @@ Our fifth week project was to create a day planner that would display the curren
 
 ## Where to access code
 
-Week_five_homework git hub page. Codes are located in the develop folder
+Week_five_homework git hub page.
 
 ## My contribution
 

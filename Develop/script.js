@@ -9,11 +9,11 @@ function taskLog() {
   $("#10").val(localStorage.getItem("10"));
   $("#11").val(localStorage.getItem("11"));
   $("#12").val(localStorage.getItem("12"));
-  $("#1").val(localStorage.getItem("1"));
-  $("#2").val(localStorage.getItem("2"));
-  $("#3").val(localStorage.getItem("3"));
-  $("#4").val(localStorage.getItem("4"));
-  $("#5").val(localStorage.getItem("5"));
+  $("#1").val(localStorage.getItem("13"));
+  $("#2").val(localStorage.getItem("14"));
+  $("#3").val(localStorage.getItem("15"));
+  $("#4").val(localStorage.getItem("16"));
+  $("#5").val(localStorage.getItem("17"));
 
   console.log(taskLog);
 }
@@ -31,4 +31,21 @@ $(".saveBtn").on("click", function (event) {
   localStorage.setItem(time, task);
 
   console.log(localStorage.getItem(time));
+});
+
+var currentHour = moment().hour();
+
+console.log({ currentHour });
+
+$(".time-block").each(function () {
+  var savedHour = parseInt($(this).data("hour"));
+  console.log({ savedHour });
+
+  if (savedHour < currentHour) {
+    $(this).addClass("past");
+  } else if (savedHour === currentHour) {
+    $(this).addClass("present");
+  } else {
+    $(this).addClass("future");
+  }
 });
